@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h2 class="text-center">Sign Up</h2>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="p-4 shadow rounded bg-light">
+    <div class="mb-3">
+      <label>Username</label>
+      <input formControlName="username" class="form-control" placeholder="Enter your name">
+    </div>
+    <div class="mb-3">
+      <label>Email</label>
+      <input formControlName="usermail" class="form-control" type="email" placeholder="Enter your email">
+    </div>
+    <div class="mb-3">
+      <label>Mobile Number</label>
+      <input formControlName="usercontact" class="form-control" placeholder="Enter mobile number">
+    </div>
+    <div class="mb-3">
+      <label>Role</label>
+      <select class="form-select" formControlName="role">
+        <option value="User">User</option>
+        <option value="Admin">Admin</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label>Password</label>
+      <input type="password" formControlName="password" class="form-control" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary w-100" [disabled]="signupForm.invalid">Sign Up</button>
+    <div class="text-success mt-2">{{ message }}</div>
+  </form>
+</div>
