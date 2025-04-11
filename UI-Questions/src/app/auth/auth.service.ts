@@ -23,7 +23,9 @@ export class AuthService {
         localStorage.setItem('token',res.token);
         localStorage.setItem('role', res.role);
         this.currentUserRole.next(res.role)
+        console.log(res)
       })
+  
     )
   }
   gettoken() :string| null{
@@ -46,12 +48,14 @@ export class AuthService {
   }
   // src/app/auth/auth.service.ts
   navigateByRole(): void {
-    const user = this.storageService.getUser();
+    const user = this.getrole();
     console.log("user",user)
 
-    if (user?.role === 'Admin') {
+    if (user === 'Admin') {
+      console.log("Im here Admin")
       this.router.navigate(['/admin']);
     } else {
+      console.log("i m here user")
       this.router.navigate(['/user']);
     }
   }

@@ -12,6 +12,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
+import { LoaderInterceptor } from './auth/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ErrorInterceptor } from './core/interceptors/error.interceptor';
     ReactiveFormsModule
   ],
   providers: [ {provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true},
-              {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true}
+              {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true},
+              {provide:HTTP_INTERCEPTORS,useClass:LoaderInterceptor,multi:true}
   ],
   bootstrap: [AppComponent]
 })

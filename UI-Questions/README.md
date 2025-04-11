@@ -88,7 +88,7 @@ src/
 //7-Let's build the Sign Up and Login components with form validation, Bootstrap styling, and integration with the backend (/api/auth/signup and /api/auth/login).
 //8-Great! Let's implement authentication and authorization using: AuthGuard – checks if the user is logged in.RoleGuard – checks if the user has the right role (Admin/User).Routing module – routes protected with guards.
 
-9-Let's now implement the Loader (spinner) service and component, and connect it globally using an HTTP interceptor to show/hide the loader on each HTTP request.
+//9-Let's now implement the Loader (spinner) service and component, and connect it globally using an HTTP interceptor to show/hide the loader on each HTTP request.
 10-Let's now implement a Global Error Handler Interceptor that catches HTTP errors like 401 (Unauthorized), 403 (Forbidden), 404 (Not Found), 500 (Server Error), etc., and optionally shows alerts or redirects the user
 
 11-Let's now implement a Storage Service that wraps localStorage and sessionStorage for easy and centralized access. This will help you store things like JWT tokens, user info, and app preferences.

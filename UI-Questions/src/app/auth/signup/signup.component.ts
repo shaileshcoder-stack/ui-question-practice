@@ -29,7 +29,10 @@ export class SignupComponent implements OnInit {
     if (this.signupForm.invalid) return;
 
     this.authService.signup(this.signupForm.value).subscribe({
-      next: () => this.message = 'Signup successful!',
+      next: () => {
+        this.message = 'Signup successful!';
+        this.router.navigate(['/login'])
+      },
       error: (err) => this.message = err.message
     });
   }
